@@ -8,7 +8,8 @@ export const registro = async (email, password) => {
         password,
     })
 
-    console.log(response)
+    return response.data.user.id
+
 }
 
 export const login = async (email, password) => {

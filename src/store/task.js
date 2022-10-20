@@ -11,6 +11,7 @@ export const usTaskStore = defineStore('task', {
   },
   actions: {
     setTask(){
+        this.task.push(post);
         //guardar las task que nos de supabase
     },
     updateTask(id, task){
@@ -19,14 +20,23 @@ export const usTaskStore = defineStore('task', {
         //cambiar el contenido con task
     },
     deleteTask(id){
+      
         //modificar el estado borrando esa task
         //encontramos el indice de eese id y eliminamos
         // ese indice del array
     },
     addTask(task){
+        const post = {
+          id: this.task.length + 1,
+          message,
+          date: new Date(),
+        }
+        this.task.push(post);
         //modifica el estado de task haciendo un push de la task
         //comprobamos que teenemos el id al insertar el registro, en caso de no tenerlo
         //tendriamos que hacer el getTask
     }
   }
 })
+
+

@@ -37,15 +37,19 @@
 import { login } from '../api';
 import { ref } from 'vue'
 import { useAuthStore } from '../store/auth'
+import { useRouter } from 'vue-router'
+
 
 const email = ref();
 const password = ref();
 const authStore = useAuthStore();
+const router = useRouter()
 
 const onLogin = async () =>{
     const id = await login(email.value, password.value)
-    authStore.login(id)
+    authStore.login(id)//queda guardado el dato del usuario que ingreso en supabase
     console.log(id)
+	router.push({name: 'home'})
 }
 
 </script>

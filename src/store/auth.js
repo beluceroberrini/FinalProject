@@ -18,6 +18,8 @@ export const useAuthStore = defineStore('auth', {
         
     },
     logout(){
+      this.isAuth = false;
+      this.id = '';
         // cambiar el estado de auth. e id del usuario
     }
   }
