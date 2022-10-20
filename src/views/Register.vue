@@ -3,7 +3,7 @@
 <div class="max-w-2xl mx-auto">
 	<div
 		class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm p-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-		<form class="space-y-6" action="#">
+		<form @submit.prevent="onSubmit()" class="space-y-6" action="#">
 			<h3 class="text-xl font-medium text-gray-900 dark:text-white">A POR TUS TAREAS !</h3>
 			<div>
 				<label for="email" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300"> Email</label>
@@ -32,9 +32,9 @@ const email = ref();
 const password = ref();
 const authStore = useAuthStore();
 
-const register = async () =>{
+const onSubmit = async () =>{
     const id = await registro(email.value, password.value)
-    authStore.registro(id)
+    authStore.login(email.value, password.value)
     console.log(id)
 }
 </script>
