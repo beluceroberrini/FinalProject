@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
+import { useAuthStore } from '../store/auth'
 
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY)
 
@@ -28,9 +29,11 @@ task: {
             description: 'Descripcion del task'
         }
 */
-export const newTask = async (task) => {
+export const newTask = async (title, message) => {
     const response = await supabase.from('task')
-        .insert(task)
+        .insert([
+            { title: title, description: message, user_id: useAuthStore().id },
+          ])
     // TODO identificar la  respuesta y retornar lo que necesitemos p.ej true si se ha insertado el registro y false si no
     // El response no retorna el id de la task que se ha creado tendremos que volver a hace un getTask para obtener los id
   //  console.log(response);
@@ -41,6 +44,8 @@ export const getTasks = async () => {
         .from('task')
         .select('*')
         .order('id', { ascending: false })
+
+        return response.data
  //   console.log(response)
     // TODO retornar la informacion de los task, ej response.data
 }
