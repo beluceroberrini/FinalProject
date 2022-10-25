@@ -1,12 +1,12 @@
 <template>
     <!-- BOTON NUEVA TAREA -->
-    <button @click="onClick()" v-if="!show">Add task</button>
+    <button @click="onClick()" v-if="!show">Añadir tarea</button>
 
     <div v-if="show" class="max-w-2xl mx-auto">
         <div
             class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm p-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
             <form @submit.prevent="onSubmit" class="space-y-6" action="#">
-                <h3 class="text-xl font-medium text-gray-900 dark:text-white">Add your task</h3>
+                <h3 class="text-xl font-medium text-gray-900 dark:text-white">Let's started!</h3>
                 <div>
                     <label for="text" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300"> Title </label>
                     <input type="text" name="textTitle" id="textTitle" v-model="title"
@@ -33,11 +33,8 @@
         </div>
     </div>
  
-     <Task  v-for="task in taskStore.tasks" :task="task" @remove="deleteTask(index)"/>
+     <Task  v-for="task in taskStore.tasks" :task="task"/>
 
-
- 
-   
 
 </template>
 <script setup>
@@ -47,18 +44,10 @@ import Task from '../components/Task.vue';
 import { usTaskStore } from "../store/task";
 
 
-
-
 const show = ref(false);
 const title = ref();
 const message = ref();
 const taskStore = usTaskStore();
-
-taskStore.setTask();
-
-// const addTask = () =>{
-//     taskStore.add(props.task)
-// }
 
 const onClick = () => {
     show.value = !show.value
@@ -66,7 +55,15 @@ const onClick = () => {
 const onSubmit = async () => {
     const response = await newTask(title.value, message.value)
     console.log(title.value, message.value)
+    taskStore.addTask(title.value, message.value)
+    title.value = '',
+    message.value = ''
+    
 }    
+
+//tratar de pasarlo con onMounted()
+taskStore.setTask();
+
 
 </script>
 <style scoped>

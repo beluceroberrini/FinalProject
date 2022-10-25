@@ -22,5 +22,15 @@ export const useAuthStore = defineStore('auth', {
       this.id = '';
         // cambiar el estado de auth. e id del usuario
     }
+  },
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        key: 'userEnabled',
+        storage: localStorage,
+        
+      }
+    ]
   }
 })

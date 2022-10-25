@@ -22,17 +22,10 @@ export const login = async (email, password) => {
     return response.data.user.id
 }
 
-/*
-task: {
-            user_id: id,
-            title: 'Titulo',
-            description: 'Descripcion del task'
-        }
-*/
 export const newTask = async (title, message) => {
     const response = await supabase.from('task')
         .insert([
-            { title: title, description: message, user_id: useAuthStore().id },
+            { title: title, message: message, user_id: useAuthStore().id},
           ])
     // TODO identificar la  respuesta y retornar lo que necesitemos p.ej true si se ha insertado el registro y false si no
     // El response no retorna el id de la task que se ha creado tendremos que volver a hace un getTask para obtener los id
@@ -62,6 +55,9 @@ export const updateTask = async (taskId, task) => {
         .from('task')
         .update(task)
         .eq('id', taskId)
+
+        //pasarle un {objeto} y los indices tiene que ser 
+        //los nombres de la columna : y el valor que quiero cambiar
 
     // TODO identificar el resulado y retornar lo que nos interesa, p.ej true si ha ido bien false si ha fallado
   //  console.log(response)
