@@ -8,3 +8,41 @@ body{
     background-image: url(./imagenes/pexels-cátia-matos-1072179.jpg);
    
 }
+
+.bg-white {
+    background-color: rgba(212, 212, 212, 0.423);
+    font-family: 'Roboto', sans-serif;
+ }               
+
+.bg-white h3{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.text-sm{
+    font-size: 17px;
+    font-weight:bold;
+}
+.olvidado{
+font-size: 14px ;
+}
+#textTitle{
+    font-size: 15px;
+}
+
+.colorBoton{
+    background-color: rgb(98, 189, 154);
+    font-weight: 100;
+}
+
+.colorBoton:hover{
+    background-color: rgb(74, 133, 110);
+}
+
+.textoFondo{
+    color:rgb(28, 41, 36)
+}
+.registrate{
+    color: rgb(0, 0, 0);
+}

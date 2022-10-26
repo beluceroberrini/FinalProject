@@ -74,6 +74,10 @@ export const deleteTask = async (taskId) => {
 
 export const logOut = async () => {
     const response = await supabase.auth.signOut()
+    if (response.error) {
+        console.log(response) 
+        return false        
+    }
+    return true
     // TODO identificar el resulado y retornar lo que nos interesa, p.ej true si ha ido bien false si ha fallado
-  //  console.log(response)
 }

@@ -24,4 +24,5 @@ if (authStore.isAuth === false){
 </script>
 <style scoped>
 
+
 </style>
