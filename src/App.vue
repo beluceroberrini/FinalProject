@@ -16,7 +16,6 @@ import Navbar from './components/Navbar.vue';
 const authStore = useAuthStore();
 const router = useRouter();
 
-
 if (authStore.isAuth === false){
     router.push({name: 'login'})
     
@@ -24,4 +23,5 @@ if (authStore.isAuth === false){
 
 </script>
 <style scoped>
+
 </style>

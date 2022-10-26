@@ -1,6 +1,8 @@
 <template>
     <!-- BOTON NUEVA TAREA -->
-    <button @click="onClick()" v-if="!show">Añadir tarea</button>
+    <div class="new-task">
+        <button @click="onClick()" v-if="!show">New task</button>
+    </div>
 
     <div v-if="show" class="max-w-2xl mx-auto">
         <div
@@ -67,5 +69,20 @@ taskStore.setTask();
 
 </script>
 <style scoped>
+.new-task{
+    /* font-family: 'Playfair Display', serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    background-color: rgba(211, 211, 211, 0.052);
+    margin-top: 55px;
+    text-decoration:overline underline; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+
+}
 
 </style>

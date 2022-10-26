@@ -3,8 +3,8 @@
 <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
   <div class="container flex flex-wrap justify-between items-center mx-auto">
   <a href="" class="flex items-center">
-      <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
-      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Don't forget me!  </span>
+      <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"> -->
+      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Stuffs to do</span>
   </a>
   <div class="flex md:order-2">
     <router-link :to="{name: 'login'}" >
@@ -33,4 +33,23 @@
 <script setup>
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Playfair+Display:ital,wght@1,400;1,500&family=Poppins:wght@300&family=Roboto:wght@400;700&display=swap');
+
+nav{
+  background-color: rgba(91, 164, 130, 0.618);
+  height: 75px;
+  display: flex;
+}
+.self-center{
+  font-family: 'Poppins', sans-serif;
+  font-weight: lighter;
+  font-size: 50px;
+}
+
+
+.text-white{
+  font-size: 17px;
+  background-color: rgb(98, 189, 154);
+}
+
 </style>

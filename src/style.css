@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Playfair+Display:ital,wght@1,500&family=Poppins:wght@300&family=Roboto:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body{
+    background-image: url(./imagenes/pexels-cátia-matos-1072179.jpg);
+   
+}
