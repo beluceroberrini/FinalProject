@@ -39,16 +39,9 @@ export const getTasks = async () => {
         .order('id', { ascending: false })
 
         return response.data
- //   console.log(response)
-    // TODO retornar la informacion de los task, ej response.data
 }
 
-/*
-task: {
-            title: 'Titulo modificado',
-            description: 'Descripcion del task modificado'
-        }
-*/
+
 export const updateTask = async (taskId, task) => {
 
     const response = await supabase
@@ -58,9 +51,7 @@ export const updateTask = async (taskId, task) => {
 
         //pasarle un {objeto} y los indices tiene que ser 
         //los nombres de la columna : y el valor que quiero cambiar
-
-    // TODO identificar el resulado y retornar lo que nos interesa, p.ej true si ha ido bien false si ha fallado
-  //  console.log(response)
+   
 }
 
 export const deleteTask = async (taskId) => {
@@ -68,8 +59,7 @@ export const deleteTask = async (taskId) => {
         .from('task')
         .delete()
         .eq('id', taskId)
-    // TODO identificar el resulado y retornar lo que nos interesa, p.ej true si ha ido bien false si ha fallado
-   // console.log(response)
+   
 }
 
 export const logOut = async () => {
@@ -79,5 +69,4 @@ export const logOut = async () => {
         return false        
     }
     return true
-    // TODO identificar el resulado y retornar lo que nos interesa, p.ej true si ha ido bien false si ha fallado
 }
