@@ -17,7 +17,7 @@
 							<a href="#" class="text-sm olvidado hover:underline ml-auto">Has olvidado tu contraseña?</a>
 						</div>
 						<button type="submit" class="colorBoton w-full text-white focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 text-center">Iniciar Sesión</button>
-						<div class="text-sm textoFondo font-medium text-gray-500 dark:text-gray-300">No estas registrado?  <router-link :to="{name: 'register'}" class="registrate hover:underline dark:text-blue-500">REGISTRATE!</router-link>
+						<div class="text-sm textoFondo font-medium text-gray-500 dark:text-gray-300">No estas registrado?  <router-link :to="{name: 'register'}" class="registrate hover:underline">REGISTRATE!</router-link>
 						</div>
 		</form>
 	</div>
