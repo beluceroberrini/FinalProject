@@ -102,7 +102,7 @@ const date = computed(() => {
 })
 
 const changeColor = (color) => {
-
+    
     props.task.color = color;
     updateTask(props.task.id, { color: props.task.color })
 }
@@ -132,6 +132,7 @@ const onClick = () => {
 }
 
 .chequeado {
+
     background-color: v-bind('props.task.color')
 }
 
