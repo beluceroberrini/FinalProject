@@ -92,6 +92,7 @@ taskStore.setTask();
     font-family: 'Roboto', sans-serif;
     justify-content: space-around;
     align-items: center;
+    
 }               
 .bg-white h3{
     font-size: 30px;
